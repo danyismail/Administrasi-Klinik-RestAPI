@@ -1,0 +1,41 @@
+import Doctor from '../models/doctor'
+
+module.exports = {
+  // 
+  getAll: (req,res) => {
+    Doctor.find({})
+    .then((data) => {
+      res.status(200).json({
+        data,
+        message: `get all data`
+      })
+    })
+    .catch((err) => {
+      res.status(500).json({
+        err,
+        message: `data failure to get`
+      })
+    })
+  },
+  create: (req,res) => {
+    let data = {
+
+    }
+  },
+  // to delete all posted link
+  deleteAll: (req,res) => {
+    Doctor.remove({})
+      .then((data) => {
+        res.status(200).json({
+          data,
+          message: `all doctor has been removed`
+        })
+      })
+      .catch((err) => {
+        res.status(500).json({
+          err,
+          message: `doctors failure to remove`
+        })
+      })
+  }
+}
