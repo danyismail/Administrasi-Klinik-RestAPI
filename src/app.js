@@ -34,17 +34,17 @@ app.use(_express["default"].urlencoded({
 app.use((0, _cookieParser["default"])());
 app.use(_express["default"]["static"](_path["default"].join(__dirname, '../public')));
 app.use('/api/v1', _index["default"]); // connect to mongoDB
-// mongoose.connect(process.env.DB_MONGO, { useNewUrlParser: true, useUnifiedTopology: true }) // local
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   console.log('mongoDB connected')
-// })
-// var mongodUri = 'mongodb://${process.env.MLAB_USER}:${process.env.MLAB_PASS}@ds151943.mlab.com:51943/short_link'
-// mongoose.connect(mongodUri, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// })
+mongoose.connect(process.env.DB_MONGO, { useNewUrlParser: true, useUnifiedTopology: true }) // local
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('mongoDB connected')
+})
+var mongodUri = 'mongodb://${process.env.MLAB_USER}:${process.env.MLAB_PASS}@ds151943.mlab.com:51943/short_link'
+mongoose.connect(mongodUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 var _default = app;
 exports["default"] = _default;
