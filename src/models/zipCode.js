@@ -1,18 +1,15 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+"use strict";
 
-const ZipCode = new Schema (
-  {
-    name: {
-      type: String
-    },
-  },
-  {
-    timestamps: true
+var _mongoose = _interopRequireDefault(require("mongoose"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var Schema = _mongoose["default"].Schema;
+var ZipCode = new Schema({
+  name: {
+    type: String
   }
-)
-
-
-// const ZipCode = mongoose.model("ZipCode", ZipCode);
-
+}, {
+  timestamps: true
+}); // const ZipCode = mongoose.model("ZipCode", ZipCode);
 // export default ZipCode

@@ -1,18 +1,24 @@
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+"use strict";
 
-const CountrySchema = new Schema (
-  {
-    name: {
-      type: String
-    },
-  },
-  {
-    timestamps: true
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _mongoose = _interopRequireDefault(require("mongoose"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var Schema = _mongoose["default"].Schema;
+var CountrySchema = new Schema({
+  name: {
+    type: String
   }
-)
+}, {
+  timestamps: true
+});
 
+var Country = _mongoose["default"].model("Country", CountrySchema);
 
-const Country = mongoose.model("Country", CountrySchema);
-
-export default Country
+var _default = Country;
+exports["default"] = _default;

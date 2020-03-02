@@ -1,37 +1,45 @@
 #!/usr/bin/env node
-
 // bin/www.js
+
 /**
  * Module dependencies.
  */
-import app from '../app';
-import debugLib from 'debug';
-import http from 'http';
-const debug = debugLib('your-project-name:server');
-// generated code below.
+"use strict";
+
+var _app = _interopRequireDefault(require("../app"));
+
+var _debug = _interopRequireDefault(require("debug"));
+
+var _http = _interopRequireDefault(require("http"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var debug = (0, _debug["default"])('your-project-name:server'); // generated code below.
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
 
+_app["default"].set('port', port);
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
 
+var server = _http["default"].createServer(_app["default"]);
 /**
  * Listen on provided port, on all network interfaces.
  */
-app.listen(port, (req,res) => {
-  console.log(`This server is running on port: ${port}`)
-})
+
+
+_app["default"].listen(port, function (req, res) {
+  console.log("This server is running on port: ".concat(port));
+});
+
 server.on('error', onError);
 server.on('listening', onListening);
-
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -51,43 +59,40 @@ function normalizePort(val) {
 
   return false;
 }
-
 /**
  * Event listener for HTTP server "error" event.
  */
+
 
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port; // handle specific listen errors with friendly messages
 
-  // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;
+
     case 'EADDRINUSE':
       console.error(bind + ' is already in use');
       process.exit(1);
       break;
+
     default:
       throw error;
   }
 }
-
 /**
  * Event listener for HTTP server "listening" event.
  */
 
+
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
