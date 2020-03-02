@@ -15,4 +15,4 @@ const ZipCode = new Schema (
 
 // const ZipCode = mongoose.model("ZipCode", ZipCode);
 
-export default ZipCode
+// export default ZipCode
