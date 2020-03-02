@@ -5,7 +5,7 @@ var _mongoose = _interopRequireDefault(require("mongoose"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Schema = _mongoose["default"].Schema;
-var ZipCode = new Schema({
+var ZipCodeSchema = new Schema({
   name: {
     type: String
   }
@@ -13,5 +13,5 @@ var ZipCode = new Schema({
   timestamps: true
 }); 
 
-const ZipCode = mongoose.model("ZipCode", ZipCode);
+const ZipCode = mongoose.model("ZipCode", ZipCodeSchema);
 export default ZipCode
