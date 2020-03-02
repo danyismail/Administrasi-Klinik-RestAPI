@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "node": "12.x",
     "start": "babel-node ./src/bin/www",
     "server": "babel-node ./src/bin/www",
     "server:prod": "node ./dist/bin/www",
@@ -36,5 +35,8 @@
     "@babel/node": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "faker": "^4.1.0"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
