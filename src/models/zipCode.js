@@ -11,5 +11,7 @@ var ZipCode = new Schema({
   }
 }, {
   timestamps: true
-}); // const ZipCode = mongoose.model("ZipCode", ZipCode);
-// export default ZipCode
+}); 
+
+const ZipCode = mongoose.model("ZipCode", ZipCode);
+export default ZipCode
