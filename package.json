@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "node": "12.15.0",
+    "node": "12.x",
     "start": "babel-node ./src/bin/www",
     "server": "babel-node ./src/bin/www",
     "server:prod": "node ./dist/bin/www",
